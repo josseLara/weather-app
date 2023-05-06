@@ -1,0 +1,21 @@
+.itemWeather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+    z-index: 2;
+}
+.itemWeather span{
+    font-weight: 700;
+}
+.itemWeather img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: linear-gradient(160deg, rgb(35, 46, 78) 0%, #e4e6eb 100%);
+    box-shadow: -2px -1px 2px 1px rgb(35, 46, 78), 5px 5px 8px 0px rgba(0, 0, 0, 0.17), 1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.itemWeather p{
+    opacity: .7;
+}
