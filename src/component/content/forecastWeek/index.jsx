@@ -1,6 +1,6 @@
 import './forecastWeek.css';
 import { BsFillCalendar3WeekFill } from 'react-icons/bs';
-import ItemWeather from '@/component/ItemWeather';
+import ItemWeather from '@/component/pure/ItemWeather';
 
 function ForecastWeek({ children }) {
     return (
@@ -17,6 +17,12 @@ function ForecastWeek({ children }) {
             </svg>
             <div className='list-forecast'>
 
+                <ItemWeather />
+                <ItemWeather />
+                <ItemWeather />
+                <ItemWeather />
+                <ItemWeather />
+                <ItemWeather />
                 <ItemWeather />
             </div>
         </div>
