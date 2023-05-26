@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import WeatherLocation from "../molecules/WeatherLocation";
 import WeatherTemperature from "../molecules/WeatherTemperature";
+import CardTime from "../molecules/CardTime";
 
 function MainWeather() {
      return (
@@ -10,6 +11,13 @@ function MainWeather() {
                {/*  */}
                <WeatherTemperature />
 
+               <Cards>
+                    <CardTime/>
+                    <CardTime/>
+                    <CardTime/>
+                    <CardTime/>
+                    <CardTime/>
+               </Cards>
           </Weather>
      );
 }
@@ -26,6 +34,12 @@ const Weather = styled.div`
      color: #fff;
 `;
 
-
-
+// Cards
+const Cards = styled.div`
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     border-top: 1px solid #ffffff56;
+     padding-top: 20px;
+`
 export default MainWeather;
