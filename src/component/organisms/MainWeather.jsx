@@ -2,8 +2,11 @@ import { styled } from "styled-components";
 import WeatherLocation from "../molecules/WeatherLocation";
 import WeatherTemperature from "../molecules/WeatherTemperature";
 import CardTime from "../molecules/CardTime";
+import { WeatherContext } from "@/context/context";
+import { useContext } from "react";
 
 function MainWeather() {
+     const {cardsTime} = useContext(WeatherContext)
      return (
           <Weather>
                {/*  */}
@@ -12,11 +15,7 @@ function MainWeather() {
                <WeatherTemperature />
 
                <Cards>
-                    <CardTime/>
-                    <CardTime/>
-                    <CardTime/>
-                    <CardTime/>
-                    <CardTime/>
+                   {cardsTime.map((card,index)=> <CardTime {...card} key={index}/>)}
                </Cards>
           </Weather>
      );

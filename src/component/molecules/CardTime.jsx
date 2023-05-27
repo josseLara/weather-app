@@ -1,16 +1,16 @@
 import { styled } from "styled-components";
 import Text from "../atom/Text";
 // icons
-import {TiWeatherSnow} from 'react-icons/ti';
+import { TiWeatherSnow } from 'react-icons/ti';
 
-function CardTime() {
-     return ( 
+function CardTime( { time, icon } ) {
+     return (
           <Card>
-               <Text txt="Now"/>
-               <TiWeatherSnow/>
-               <Text txt="19"/>
+               <Text txt={time} />
+               {icon}
+               <Text txt="19" />
           </Card>
-      );
+     );
 }
 const Card = styled.div`
      display: flex;

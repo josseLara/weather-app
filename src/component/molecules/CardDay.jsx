@@ -1,16 +1,14 @@
 import { styled } from "styled-components";
 import TempValue from "../atom/TempValue";
-// icons
-import {TiWeatherWindyCloudy} from "react-icons/ti";
 
-function CardDay() {
+function CardDay({day,icon}) {
      return (
           <Card>
                <Info>
-                    <h1>Friday</h1>
+                    <h1>{day}</h1>
                     <TempValue/>
                </Info>
-               <TiWeatherWindyCloudy/>
+               {icon}
           </Card>
      );
 }
