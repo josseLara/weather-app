@@ -8,6 +8,8 @@ function SideBar() {
           <Content>
                <IconSidebar><TiWeatherCloudy/></IconSidebar>
                <IconSidebar><SlLocationPin/></IconSidebar>
+               <IconSidebar><SlLocationPin/></IconSidebar>
+               <IconSidebar><SlLocationPin/></IconSidebar>
           </Content>
       );
 }
@@ -15,7 +17,7 @@ function SideBar() {
 const Content = styled.aside`
      display: flex;
      flex-direction: column;
-     gap: .1rem;
+  
      
      @media screen and ( max-width:700px ){
           position: fixed;

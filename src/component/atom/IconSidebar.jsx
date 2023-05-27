@@ -8,8 +8,8 @@ function IconSidebar( { children } ) {
      );
 }
 const BtnIcon = styled.button`
-     width: 90px;
-     height: 70px;
+     width: 190px;
+     height: 100%;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -20,11 +20,13 @@ const BtnIcon = styled.button`
           font-size: 1.7rem;
      }
      &:hover{
-          background-color: transparent;
+          background-color: #6face9;
           border: 1px solid #000;
           color: #000;
           cursor: pointer;
           transition: all .3s ease-in-out;
+          transform: scale(101%);
+          transition: all .8s;
      }
      @media screen and ( max-width:700px ){
           width: 40px;
