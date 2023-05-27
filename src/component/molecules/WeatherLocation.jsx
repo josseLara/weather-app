@@ -1,15 +1,26 @@
 import { styled } from "styled-components";
 
+
 function WeatherLocation() {
      return (
           <Location>
-               <h1>Montreal</h1>
-               <span>Thursday</span>
+               <Zona>
+                    <h1>Montreal</h1>
+                    <span>Thursday</span>
+               </Zona>
+               <div className="time">12:21 PM</div>
           </Location>
      );
 }
 
 const Location = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 20px;
+`;
+const Zona = styled.div`
      justify-self: start;
      display: flex;
      flex-direction: column;
