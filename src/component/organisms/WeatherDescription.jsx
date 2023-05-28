@@ -14,7 +14,10 @@ const WeatherDescription = ( e ) => {
                     <Group>
                          {/*  */}
                          <ItemTime>
-
+                         16:30h <b>Stay at Boham art Hotel</b>
+                         </ItemTime>
+                         <ItemTime>
+                         18:30h <b>Dinner at Cafe Luna</b>
                          </ItemTime>
                     </Group>
                </Time>
@@ -23,7 +26,7 @@ const WeatherDescription = ( e ) => {
 };
 
 const Content = styled.div`
-     width: 600px;
+     width: 300px;
      height: fit-content;
      display: flex;
      flex-direction: column;
@@ -55,11 +58,28 @@ const Time = styled.div`
      display: flex;
      flex-direction: column;
      gap: 20px;
+
+     h2{
+          font-size: 1.4rem;
+          font-weight: 400;
+          
+     }
 `
 const Group = styled.div`
      display: flex;
      flex-direction: column;
      gap: 15px;
 `
-const ItemTime = styled.div``
+const ItemTime = styled.div`
+     font-size:1rem;
+     font-weight: 300;
+     display: flex;
+     gap: 30px;
+     width: 300px;
+     padding: 0px 10px;
+     span{
+          font-size: 1.1rem;
+          font-weight: bold;
+     }
+`
 export default WeatherDescription;
