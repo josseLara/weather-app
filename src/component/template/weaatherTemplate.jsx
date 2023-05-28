@@ -1,39 +1,29 @@
 import { styled } from "styled-components";
-import SideBar from "../organisms/SideBar";
-import MainWeather from "../organisms/MainWeather";
-import CardDay from "../molecules/CardDay";
-import { useContext } from "react";
-import { WeatherContext } from "@/context/context";
+import WeatherDescription from "../organisms/WeatherDescription";
 
 function WeatherTemplate() {
-     const {cardsDay} = useContext(WeatherContext)
 
-     return (  
+     return (
           <Weather>
-               {/* sidebar */}
-               <SideBar/>
+
                {/* content */}
-               <Main>
-                    <MainWeather/>
-                    <Cards>
-                         {cardsDay.map((card,index)=> <CardDay {...card} key={index}/>)}
-                    </Cards>
-               </Main>
+               <WeatherDescription />
+               <Cards>
+
+               </Cards>
           </Weather>
      );
 }
-const Weather = styled.div`
-     display: flex;
-`;
-const Main = styled.main`
-     display: grid;
-     background-image: url(https://i.imgur.com/bkHpV7t.jpeg);
-     width: 100%;
-     grid-template-columns: 3fr 1fr;
+const Weather = styled.main`
+     width: 100vw;
      height: 100vh;
+     display: flex;
+     background: url(https://img.zcool.cn/community/0109145b86c6f5a80120245c84225b.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100/quality,q_100/format,webp);
      background-position: center;
      background-size: cover;
+     background-repeat: no-repeat;
 `;
+
 
 const Cards = styled.div`
      width: 100%;
