@@ -30,7 +30,7 @@ const WeatherTemperature = ( e ) => {
 };
 
 const Temperature = styled.div`
-     width: 250px;
+     width: 280px;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -55,6 +55,7 @@ const Temperature = styled.div`
      }
 
      @media screen and (min-width:900px){
+          width: 350px;
           h1{
                     font-size: 2.3rem;      
           }
@@ -83,5 +84,6 @@ const Cast = styled.div`
           font-weight: 600;
           color: #fff;
      }
+
 `;
 export default WeatherTemperature;

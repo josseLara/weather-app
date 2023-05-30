@@ -19,12 +19,14 @@ const WeatherCards = ( e ) => {
 
 const Cards = styled.div`
      width: 100%;
+     height: 200px;
      display: flex;
      overflow-x: auto;
+     overflow-y: hidden;
      margin-bottom: 20px;
      padding-left: 10px;
      gap: 20px;
-
+     
 `;
 
 const Card = styled.div`
@@ -35,8 +37,9 @@ const Card = styled.div`
      align-items: center;
      justify-content:center ;
      color: #fff;
-     border-radius: 20px;
-     overflow: hidden;
+     border-radius: 10px;
+     background-color: #e0eafd;
+     
      img{
           width: 100px;
           height: 100px;
@@ -44,19 +47,20 @@ const Card = styled.div`
      }
 
      .day{
-          width: 100%;
+          width: 102%;
           font-size: 1.5rem;
           font-weight: 300;
           background-color: #5682d7;
-          margin-top: 10px;
+          margin-top: 17px;
           text-align: center;
+          border-radius: 3px;
      }
      .cardTemperature{
           width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
-          background-color: #e0eafd;
+         
           padding: 20px;
      }
      .temperature{

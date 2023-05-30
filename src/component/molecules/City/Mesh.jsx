@@ -13,7 +13,7 @@ function MeshCity() {
     const gltf = useLoader(GLTFLoader, '/modelo/scene.gltf')
 
     return (
-        <div >
+        <div>
             <Canvas style={{width:'100%',height:'100vh',position:'fixed'}} >
                 <PerspectiveCamera makeDefault fov={60} />
                 <OrbitControls ref={controlsRef} />

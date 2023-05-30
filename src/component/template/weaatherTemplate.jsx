@@ -39,5 +39,8 @@ const ContentTop = styled.div`
      justify-content: space-between;
      flex-wrap: wrap;
      padding: 15px;
+     gap: 20px;
+
+   
 `
 export default WeatherTemplate;
