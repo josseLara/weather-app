@@ -14,10 +14,10 @@ const WeatherDescription = ( e ) => {
                     <Group>
                          {/*  */}
                          <ItemTime>
-                         16:30h <b>Stay at Boham art Hotel</b>
+                              16:30h <b>Stay at Boham art Hotel</b>
                          </ItemTime>
                          <ItemTime>
-                         18:30h <b>Dinner at Cafe Luna</b>
+                              18:30h <b>Dinner at Cafe Luna</b>
                          </ItemTime>
                     </Group>
                </Time>
@@ -26,19 +26,29 @@ const WeatherDescription = ( e ) => {
 };
 
 const Content = styled.div`
-     width: 300px;
+     width: 400px;
      height: fit-content;
      display: flex;
      flex-direction: column;
      gap: 20px;
-     color: #fff;
+     color: #000000;
      
 `;
 
 // ---> 1 Date <---
 const Date = styled.div`
+     width: 100%;
      display: flex;
      flex-direction: column;
+     background: rgba(0, 0, 0, 0);
+     border-radius: 16px;
+     background: rgba(255, 255, 255, 0);
+     border-radius: 16px;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+     backdrop-filter: blur(3.5px);
+     -webkit-backdrop-filter: blur(3.5px);
+     border: 1px solid rgba(255, 255, 255, 0.05);
+     padding:10px ;
      p{
         font-weight: 400;
         font-size: 1.1rem;
@@ -58,17 +68,25 @@ const Time = styled.div`
      display: flex;
      flex-direction: column;
      gap: 20px;
+     background: rgba(255, 255, 255, 0);
+     border-radius: 16px;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+     backdrop-filter: blur(3.5px);
+     -webkit-backdrop-filter: blur(3.5px);
+     border: 1px solid rgba(255, 255, 255, 0.05);
 
+     padding: 10px;
      h2{
-          font-size: 1.4rem;
-          font-weight: 400;
-          
-     }
+               font-size: 1.4rem;
+               font-weight: 400;
+               
+          }
 `
 const Group = styled.div`
      display: flex;
      flex-direction: column;
      gap: 15px;
+          
 `
 const ItemTime = styled.div`
      font-size:1rem;
