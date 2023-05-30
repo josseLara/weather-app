@@ -6,8 +6,10 @@ const WeatherCards = ( e ) => {
                {[1, 2, 3, 4, 5, 6].map( e => {
                     return <Card>
                          <span className="day">Today</span>
-                         <img src="https://cdn-icons-png.flaticon.com/128/9402/9402875.png" alt="temperature" />
-                         <span className="temperature">21</span>
+                         <div className="cardTemperature">
+                              <img src="https://cdn-icons-png.flaticon.com/128/9402/9402875.png" alt="temperature" />
+                              <span className="temperature">21°</span>
+                         </div>
                     </Card>
                } )
                }
@@ -26,19 +28,15 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-     width: 250px;
+     width: 200px;
      height: 200px;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content:center ;
      color: #fff;
-     background: -moz-linear-gradient(5deg, #5365a5 67%, #213a654f 100%);
-     background: -webkit-linear-gradient(5deg, #5365a5  67%, #213a654f 100%);
-     background: linear-gradient(5deg, #5365a5  67%, #213a654f 100%);
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5365a5",endColorstr="#213a65",GradientType=1);
-     padding: 20px;
-     border-radius: 10px;
+     border-radius: 20px;
+     overflow: hidden;
      img{
           width: 100px;
           height: 100px;
@@ -46,12 +44,25 @@ const Card = styled.div`
      }
 
      .day{
-          font-size: 1.8rem;
-          font-weight: 600;
+          width: 100%;
+          font-size: 1.5rem;
+          font-weight: 300;
+          background-color: #5682d7;
+          margin-top: 10px;
+          text-align: center;
+     }
+     .cardTemperature{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #e0eafd;
+          padding: 20px;
      }
      .temperature{
           font-size: 1.7rem;
           font-weight: 600;
+          color: #1c4494;
      }
 `;
 export default WeatherCards;

@@ -17,14 +17,10 @@ const Temperature = styled.div`
      flex-direction: column;
      align-items: end;
      gap: 10px;
-     color: #fff;
      border-radius: 16px;
-     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.111);
-     backdrop-filter: blur(3.5px);
-     -webkit-backdrop-filter: blur(3.5px);
-     border: 1px solid rgba(255, 255, 255, 0.05);
+     color: #fff;
+     background: #5682d7;
      padding: 10px 20px;
-     background-color: #ffffff2e;
      img{
           width: 150px;
           height: 150px;
@@ -38,6 +34,12 @@ const Temperature = styled.div`
           font-size: 1.1rem;
           font-weight: 300;
           color: #ffffff82;
+     }
+
+     @media screen and (min-width:900px){
+          h1,span{
+                    font-size: 2.3rem;      
+          }
      }
 `;
 export default WeatherTemperature;

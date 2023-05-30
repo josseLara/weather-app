@@ -44,11 +44,11 @@ const Date = styled.div`
      border-radius: 16px;
      background: rgba(255, 255, 255, 0);
      border-radius: 16px;
-     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-     backdrop-filter: blur(3.5px);
-     -webkit-backdrop-filter: blur(3.5px);
+     color: #fff;
+     background: #7596E8;
+     background: linear-gradient(0deg, #7596E8, #6B8CDD);
      border: 1px solid rgba(255, 255, 255, 0.05);
-     padding:10px ;
+     padding:10px 20px;
      p{
         font-weight: 400;
         font-size: 1.1rem;
@@ -61,32 +61,47 @@ const Date = styled.div`
           font-weight: 500;
         font-size: .8rem;
      }
+     @media screen and (min-width:900px){
+          p{  
+        font-size: 1.5rem;
+     }
+     div{
+          font-size: 1.8rem;      
+     }
+     span{
+        font-size: 1rem;
+     }
+               }
 `;
 
 // ---> 2 Time <---
 const Time = styled.div`
      display: flex;
      flex-direction: column;
-     gap: 20px;
+     gap: 10px;
      background: rgba(255, 255, 255, 0);
      border-radius: 16px;
-     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-     backdrop-filter: blur(3.5px);
-     -webkit-backdrop-filter: blur(3.5px);
-     border: 1px solid rgba(255, 255, 255, 0.05);
-
-     padding: 10px;
+     background: #7596E8;
+     background: linear-gradient(0deg, #7596E8, #6B8CDD);
+     overflow: hidden;
+     color: #fff;
      h2{
                font-size: 1.4rem;
                font-weight: 400;
-               
+               padding: 0px 10px;
+               @media screen and (min-width:900px){
+                    font-size: 2rem;
+               }
           }
 `
 const Group = styled.div`
      display: flex;
      flex-direction: column;
      gap: 15px;
-          
+     padding: 10px;
+     width: 100%;
+    background-color: #e0eafd;
+    color: #000;
 `
 const ItemTime = styled.div`
      font-size:1rem;
@@ -99,5 +114,9 @@ const ItemTime = styled.div`
           font-size: 1.1rem;
           font-weight: bold;
      }
+     @media screen and (min-width:900px){
+          width:400px;
+          font-size: 1.3rem;
+          }
 `
 export default WeatherDescription;
