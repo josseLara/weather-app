@@ -3,8 +3,8 @@ import { styled } from "styled-components";
 const WeatherCards = ( e ) => {
      return (
           <Cards>
-               {[1, 2, 3, 4, 5, 6].map( e => {
-                    return <Card>
+               {[1, 2, 3, 4, 5, 6].map( (e,i) => {
+                    return <Card key={i}>
                          <span className="day">Today</span>
                          <div className="cardTemperature">
                               <img src="https://cdn-icons-png.flaticon.com/128/9402/9402875.png" alt="temperature" />

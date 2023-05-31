@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import Cast from "../molecules/Cast";
 
 const WeatherTemperature = ( e ) => {
      return (
@@ -10,20 +11,8 @@ const WeatherTemperature = ( e ) => {
                {/* temperatura */}
                <Forecast>
                     {/* 1 */}
-                    <Cast>
-                         <span>Temp</span>
-                         <p>32</p>
-                    </Cast>
-                    {/* 2 */}
-                    <Cast>
-                         <span>Temp</span>
-                         <p>32</p>
-                    </Cast>
-                    {/* 3 */}
-                    <Cast>
-                         <span>Temp</span>
-                         <p>32</p>
-                    </Cast>
+                    {[1,2,3].map( (e,i) => <Cast key={i}/> )}
+                  
                </Forecast>
           </Temperature>
      );
@@ -68,22 +57,5 @@ const Forecast = styled.div`
      gap: 30px;
      margin-top: 20px;
 `;
-const Cast = styled.div`
-     display: flex;
-     flex-direction: column;
-     gap: 2px;
-     align-items:center ;
-     span{
-          font-size: 1.2rem;
-          opacity:.8;
-          font-weight: 300;
-          color: #ebebeb;
-     }
-     p{
-          font-size: 1.8rem;
-          font-weight: 600;
-          color: #fff;
-     }
 
-`;
 export default WeatherTemperature;

@@ -1,4 +1,7 @@
-const { styled } = require( "styled-components" );
+import { styled } from "styled-components";
+import ItemTime from "../molecules/ItemTime";
+
+
 
 const WeatherDescription = ( e ) => {
      return (
@@ -13,12 +16,7 @@ const WeatherDescription = ( e ) => {
                     <h2>NEXT</h2>
                     <Group>
                          {/*  */}
-                         <ItemTime>
-                              16:30h <b>Stay at Boham art Hotel</b>
-                         </ItemTime>
-                         <ItemTime>
-                              18:30h <b>Dinner at Cafe Luna</b>
-                         </ItemTime>
+                        {[1,2].map( (e, i) => <ItemTime key={i}/>)}
                     </Group>
                </Time>
           </Content>
@@ -103,20 +101,5 @@ const Group = styled.div`
     background-color: #e0eafd;
     color: #000;
 `
-const ItemTime = styled.div`
-     font-size:1rem;
-     font-weight: 300;
-     display: flex;
-     gap: 30px;
-     width: 300px;
-     padding: 0px 10px;
-     span{
-          font-size: 1.1rem;
-          font-weight: bold;
-     }
-     @media screen and (min-width:900px){
-          width:400px;
-          font-size: 1.3rem;
-          }
-`
+
 export default WeatherDescription;
