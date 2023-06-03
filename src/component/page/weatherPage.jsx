@@ -1,8 +1,10 @@
 "use client";
+import fetchWeather from "@/app/api/weatherApi";
 import MeshCity from "../molecules/City/Mesh";
 import WeatherTemplate from "../template/weaatherTemplate";
 
-function WeatherPage() {
+function WeatherPage({ApiData}) {
+    const weatherData = ApiData;
     
      return (
          <>
@@ -12,5 +14,6 @@ function WeatherPage() {
 
      );
 }
+
 
 export default WeatherPage;
