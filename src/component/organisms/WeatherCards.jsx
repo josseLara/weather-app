@@ -1,14 +1,35 @@
+import { getFormattedDate } from "@/helpers/getDate";
+import getDateMonth from "@/helpers/getDateMonth";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { styled } from "styled-components";
 
 const WeatherCards = ( e ) => {
+     const [weatherMonths,setWeatherMonts] = useState();
+
+     let time = useSelector(state => state.weather)
+     useEffect(()=>{
+          if (time.data && 'hourly' in time.data) {
+              let weathers = time.data?.hourly;
+              let months =  getDateMonth(weathers.time).map((date)=>{
+               let timeFormat = getFormattedDate(date.time)[0].split(',')[0];
+                    return {month:timeFormat,temperature_2m:weathers?.temperature_2m[date.index]}
+              });
+              console.log(months)
+              setWeatherMonts(months);
+              
+          }
+     },[time])
+   
+
      return (
           <Cards>
-               {[1, 2, 3, 4, 5, 6].map( (e,i) => {
+               {weatherMonths.map( (time,i) => {
                     return <Card key={i}>
-                         <span className="day">Today</span>
+                         <span className="day">{time.month}</span>
                          <div className="cardTemperature">
                               <img src="https://cdn-icons-png.flaticon.com/128/9402/9402875.png" alt="temperature" />
-                              <span className="temperature">21°</span>
+                              <span className="temperature">{time.temperature_2m}°</span>
                          </div>
                     </Card>
                } )
