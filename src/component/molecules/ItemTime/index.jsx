@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 
-function ItemTime() {
+function ItemTime({time,temperature_2m}) {
      return (
           <Item>
-               16:30h <b>Stay at Boham art Hotel</b>
+              {time} <b>{temperature_2m}</b>
           </Item>
      );
 }

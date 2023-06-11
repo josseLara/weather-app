@@ -1,25 +1,43 @@
 import { styled } from "styled-components";
 import ItemTime from "../molecules/ItemTime";
 import { useSelector } from "react-redux";
+import {matchingDateIndex,getFormattedDate} from "@/helpers/getDate";
+import { useEffect, useState } from "react";
 
 
 
 const WeatherDescription = ( e ) => {
+     let [date,setDate] = useState()
+     let [hour,setHour] = useState()
+     let [weatherHour,setWeatherHour] = useState()
      let time = useSelector(state => state.weather)
-     console.log('time',time.data?.hourly)
+     useEffect(()=>{
+          if (time.data && 'hourly' in time.data) {
+              let weathers = time.data?.hourly
+              
+              setDate(getFormattedDate()[0])
+              setHour(getFormattedDate()[1])
+              
+              let weatherHours = (weathers?.time).slice(0, 4).map((time,index)=>{
+               return {time:getFormattedDate(time)[1],temperature_2m: weathers?.temperature_2m[index]}
+              })
+              setWeatherHour(weatherHours)
+          }
+     },[time])
+   
      return (
           <Content>
                {/*  */}
                <Date>
-                    <div>12:29 <span>PM</span></div>
-                    <p>Monday, 18 August 2022</p>
+                    <div>{hour}</div>
+                    <p>{date}</p>
                </Date>
                {/*  */}
                <Time>
                     <h2>NEXT</h2>
                     <Group>
                          {/*  */}
-                        {[1,2].map( (e, i) => <ItemTime key={i}/>)}
+                        {weatherHour && weatherHour.map( (props, i) => <ItemTime {...props} key={i}/>)}
                     </Group>
                </Time>
           </Content>
@@ -58,10 +76,7 @@ const Date = styled.div`
           font-size: 1.2rem;
           font-weight: 600;
      }
-     span{
-          font-weight: 500;
-        font-size: .8rem;
-     }
+
      @media screen and (min-width:900px){
           p{  
         font-size: 1.5rem;
@@ -69,9 +84,7 @@ const Date = styled.div`
      div{
           font-size: 1.8rem;      
      }
-     span{
-        font-size: 1rem;
-     }
+
                }
 `;
 
