@@ -1,9 +1,12 @@
 import { styled } from "styled-components";
 import ItemTime from "../molecules/ItemTime";
+import { useSelector } from "react-redux";
 
 
 
 const WeatherDescription = ( e ) => {
+     let time = useSelector(state => state.weather)
+     console.log('time',time.data?.hourly)
      return (
           <Content>
                {/*  */}

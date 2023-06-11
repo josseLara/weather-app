@@ -1,13 +1,16 @@
+"use client"
 import WeatherPage from '@/component/page/weatherPage'
 import RootLayout from './layout'
 import './globals.css'
-import weatherApi from './api/weatherApi'
-
+import { Provider } from 'react-redux'
+import store from '../_reducers/store';
 export default function Home() {
   // weatherApi()
   return (
-    <RootLayout>
-      <WeatherPage />
-    </RootLayout>
+    <Provider store={store}>
+      <RootLayout>
+        <WeatherPage />
+      </RootLayout>
+     </Provider>
   )
 }
