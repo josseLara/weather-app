@@ -1,5 +1,6 @@
 import { getFormattedDate } from "@/helpers/getDate";
 import getDateMonth from "@/helpers/getDateMonth";
+import getTypeImageWeather from "@/helpers/getImagenWeather";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { styled } from "styled-components";
@@ -15,20 +16,20 @@ const WeatherCards = ( e ) => {
                let timeFormat = getFormattedDate(date.time)[0].split(',')[0];
                     return {month:timeFormat,temperature_2m:weathers?.temperature_2m[date.index]}
               });
-              console.log(months)
               setWeatherMonts(months);
               
           }
      },[time])
    
 
+
      return (
           <Cards>
-               {weatherMonths.map( (time,i) => {
+               {weatherMonths && weatherMonths.map( (time,i) => {
                     return <Card key={i}>
                          <span className="day">{time.month}</span>
                          <div className="cardTemperature">
-                              <img src="https://cdn-icons-png.flaticon.com/128/9402/9402875.png" alt="temperature" />
+                              <img src={getTypeImageWeather(time.temperature_2m)} alt="temperature" />
                               <span className="temperature">{time.temperature_2m}°</span>
                          </div>
                     </Card>

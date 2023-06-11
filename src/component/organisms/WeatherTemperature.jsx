@@ -1,18 +1,37 @@
 import { styled } from "styled-components";
 import Cast from "../molecules/Cast";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { getDateIndex, matchingDateIndex } from "@/helpers/getDate";
+import getTypeImageWeather from "@/helpers/getImagenWeather";
 
-const WeatherTemperature = ( e ) => {
+const WeatherTemperature = () => {
+     let time = useSelector(state => state.weather)
+     const [nowTemp, setNowTemp] = useState();
+     useEffect(() => {
+          if (time.data && 'hourly' in time.data) {
+               let weathers = time.data?.hourly
+
+               console.log(weathers.temperature_2m[getDateIndex(weathers.time)])
+               setNowTemp(weathers.temperature_2m[getDateIndex(weathers.time)])
+          }
+
+     }, [time])
+
+     // imagen
+     let imgTemp = getTypeImageWeather(nowTemp);
+
      return (
           <Temperature>
                <h1>Clear City</h1>
-               <p>Terraxia, Cosmo Eternal</p>
-               <img src="https://cdn-icons-png.flaticon.com/128/9402/9402875.png" alt="temperature" />
-               
+               <p>Berlin, Germany</p>
+               <img src={imgTemp} alt="temperature" />
+
                {/* temperatura */}
                <Forecast>
                     {/* 1 */}
-                    {[1,2,3].map( (e,i) => <Cast key={i}/> )}
-                  
+                    <Cast temp={nowTemp} />
+
                </Forecast>
           </Temperature>
      );

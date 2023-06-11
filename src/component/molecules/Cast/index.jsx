@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
 
-function Cast() {
+function Cast({temp}) {
      return (
           <Card>
-               <span>Temp</span>
-               <p>32</p>
+               <span>Temperature</span>
+               <p>{temp}°</p>
           </Card>
      );
 }

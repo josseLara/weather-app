@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 function ItemTime({time,temperature_2m}) {
      return (
           <Item>
-              {time} <b>{temperature_2m}</b>
+              {time}➡️<b>{temperature_2m}°</b>
           </Item>
      );
 }
