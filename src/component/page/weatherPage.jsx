@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { onAddData } from "@/_reducers/weather";
 import fetchWeatherData from "@/app/api/weatherApi";
+import Map from "../organisms/Map";
 
 function WeatherPage() {
     let dispatch= useDispatch();
@@ -19,6 +20,7 @@ function WeatherPage() {
          <>
           <WeatherTemplate  />
           <MeshCity/>
+          {/* <Map/> */}
          </>
 
      );
