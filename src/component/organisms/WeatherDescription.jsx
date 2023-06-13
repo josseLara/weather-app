@@ -18,7 +18,7 @@ const WeatherDescription = ( e ) => {
               setDate(getFormattedDate()[0])
               setHour(getFormattedDate()[1])
               
-              let weatherHours = (weathers?.time).slice(0, 4).map((time,index)=>{
+              let weatherHours = (weathers?.time).slice(0, 12).map((time,index)=>{
                return {time:getFormattedDate(time)[1],temperature_2m: weathers?.temperature_2m[index]}
               })
               setWeatherHour(weatherHours)
@@ -110,6 +110,9 @@ const Time = styled.div`
 `
 const Group = styled.div`
      display: flex;
+     height: 230px;
+     overflow-y: auto;
+     overflow-x: hidden;
      flex-direction: column;
      gap: 15px;
      padding: 10px;

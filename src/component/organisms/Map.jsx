@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { useDispatch } from 'react-redux';
+import { onAddData } from '@/_reducers/weather';
+import fetchWeatherData from '@/app/api/weatherApi';
 
 const containerStyle = {
   width: '400px',
@@ -14,9 +17,10 @@ const center = {
 function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "API"
+    googleMapsApiKey: process.env.API_KEY
   });
-
+  
+  let dispatch= useDispatch();
   const [map, setMap] = React.useState(null);
   const [markerPosition, setMarkerPosition] = React.useState(null); // Agregar estado para la ubicación del marcador
 
@@ -33,9 +37,15 @@ function Map() {
   const handleClick = (event) => {
     const lat = event.latLng.lat();
     const lng = event.latLng.lng();
+   
     setMarkerPosition({ lat, lng }); // Actualizar la ubicación del marcador
-    alert(`lat->${lat}  log->${lng}`)
-  };
+    
+    fetchWeatherData(lat,lng).then( data =>{
+        dispatch(onAddData(data))
+    })
+};
+
+
 
   return isLoaded ? (
     <GoogleMap

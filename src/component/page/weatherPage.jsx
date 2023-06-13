@@ -11,7 +11,7 @@ function WeatherPage() {
     let dispatch= useDispatch();
     
     useEffect(()=>{     
-        fetchWeatherData('').then( data=>{
+        fetchWeatherData().then( data=>{
            dispatch(onAddData(data))
         })
     },[])
@@ -20,7 +20,6 @@ function WeatherPage() {
          <>
           <WeatherTemplate  />
           <MeshCity/>
-          {/* <Map/> */}
          </>
 
      );

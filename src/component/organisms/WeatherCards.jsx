@@ -45,7 +45,6 @@ const Cards = styled.div`
      display: flex;
      overflow-x: auto;
      overflow-y: hidden;
-     margin-bottom: 20px;
      padding-left: 10px;
      gap: 20px;
      
@@ -53,7 +52,7 @@ const Cards = styled.div`
 
 const Card = styled.div`
      width: 200px;
-     height: 200px;
+     height: 160px;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -79,10 +78,9 @@ const Card = styled.div`
      }
      .cardTemperature{
           width: 100%;
+          height: 190px;
           display: flex;
-          flex-direction: column;
           align-items: center;
-         
           padding: 20px;
      }
      .temperature{

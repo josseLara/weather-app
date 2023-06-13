@@ -9,9 +9,14 @@ const getTypeImageWeather = (nowTemp)=>{
      }
      else if(nowTemp > 5){
           imgTemp = "/weather/lluvia.png"
-     }else{
+     }
+     else if(nowTemp > 1){
           imgTemp = "/weather/nieve.png"
 
+     }
+     else{
+          imgTemp = "/weather/cero.png"
+          
      }
      return imgTemp;
 }
