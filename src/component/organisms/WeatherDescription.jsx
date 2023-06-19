@@ -1,30 +1,13 @@
 import { styled } from "styled-components";
 import ItemTime from "../molecules/ItemTime";
 import { useSelector } from "react-redux";
-import {matchingDateIndex,getFormattedDate} from "@/helpers/getDate";
-import { useEffect, useState } from "react";
+import { getDateTodayTransformer } from "@/helpers/getDateTodayTransformer";
 
+const WeatherDescription = (e) => {
 
-
-const WeatherDescription = ( e ) => {
-     let [date,setDate] = useState()
-     let [hour,setHour] = useState()
-     let [weatherHour,setWeatherHour] = useState()
      let time = useSelector(state => state.weather)
-     useEffect(()=>{
-          if (time.data && 'hourly' in time.data) {
-              let weathers = time.data?.hourly
-              
-              setDate(getFormattedDate()[0])
-              setHour(getFormattedDate()[1])
-              
-              let weatherHours = (weathers?.time).slice(0, 12).map((time,index)=>{
-               return {time:getFormattedDate(time)[1],temperature_2m: weathers?.temperature_2m[index]}
-              })
-              setWeatherHour(weatherHours)
-          }
-     },[time])
-   
+     let  {date,hour,weatherHour} = getDateTodayTransformer(time);
+
      return (
           <Content>
                {/*  */}
@@ -37,7 +20,7 @@ const WeatherDescription = ( e ) => {
                     <h2>NEXT</h2>
                     <Group>
                          {/*  */}
-                        {weatherHour && weatherHour.map( (props, i) => <ItemTime {...props} key={i}/>)}
+                         {weatherHour && weatherHour.map((props, i) => <ItemTime {...props} key={i} />)}
                     </Group>
                </Time>
           </Content>

@@ -1,8 +1,6 @@
-import { AnimationMixer } from 'three';
 import { useGLTF } from '@react-three/drei';
 import {  useRef } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three';
 import * as THREE from 'three';
 
 function City() {

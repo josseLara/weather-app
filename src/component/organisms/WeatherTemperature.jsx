@@ -2,20 +2,16 @@ import { styled } from "styled-components";
 import Cast from "../molecules/Cast";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getDateIndex, matchingDateIndex } from "@/helpers/getDate";
 import getTypeImageWeather from "@/helpers/getImagenWeather";
+import getTemperature from "@/helpers/getTemperature";
+
 
 const WeatherTemperature = () => {
      let time = useSelector(state => state.weather)
      const [nowTemp, setNowTemp] = useState();
+     
      useEffect(() => {
-          if (time.data && 'hourly' in time.data) {
-               let weathers = time.data?.hourly
-
-               console.log(weathers.temperature_2m[getDateIndex(weathers.time)])
-               setNowTemp(weathers.temperature_2m[getDateIndex(weathers.time)])
-          }
-
+          setNowTemp(getTemperature(time));
      }, [time])
 
      // imagen

@@ -17,7 +17,6 @@ const WeatherCards = ( e ) => {
                     return {month:timeFormat,temperature_2m:weathers?.temperature_2m[date.index]}
               });
               setWeatherMonts(months);
-              
           }
      },[time])
    

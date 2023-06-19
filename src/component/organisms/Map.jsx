@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux';
-import { onAddData } from '@/_reducers/weather';
+import { onAddData } from '@/reducer/weather/weather';
 import fetchWeatherData from '@/app/api/weatherApi';
 
 const containerStyle = {
@@ -51,7 +51,7 @@ function Map() {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10}
+      zoom={2}
       onLoad={onLoad}
       onUnmount={onUnmount}
       onClick={handleClick}
